@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none';">
+  <meta name="theme-color" content="#f4f6f3">
+  <title>Saldo Claro</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" data-page="inicio" aria-label="Saldo Claro, inicio">
+        <span class="brand-mark">$</span><span><strong>Saldo Claro</strong><small>Finanzas personales</small></span>
+      </a>
+      <div class="nav-label">MENÚ</div>
+      <nav class="nav-list">
+        <button class="nav-item active" data-page="inicio"><span class="nav-icon">◫</span> Resumen</button>
+        <button class="nav-item" data-page="movimientos"><span class="nav-icon">↕</span> Movimientos</button>
+        <button class="nav-item" data-page="presupuestos"><span class="nav-icon">▤</span> Presupuestos</button>
+        <button class="nav-item" data-page="metas"><span class="nav-icon">◎</span> Metas de ahorro</button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="privacy-note"><span class="privacy-dot"></span><div><strong>Datos en este equipo</strong><small>Guardado local y privado</small></div></div>
+      <button class="nav-item" data-page="ajustes"><span class="nav-icon">⚙</span> Ajustes y respaldo</button>
+      <div class="sidebar-foot">SALDO CLARO <span>v1.0</span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div><p class="eyebrow" id="today-label"></p><h1 id="page-title">Resumen</h1></div>
+        <div class="top-actions"><label class="month-picker"><span>Período</span><input id="month-picker" type="month"></label><button class="button primary" id="new-movement">＋ <span>Nuevo movimiento</span></button></div>
+      </header>
+      <div id="demo-banner" class="demo-banner hidden"><span>ⓘ Estás viendo datos de demostración.</span><button class="text-button" data-page="ajustes">Administrar datos</button></div>
+      <section id="view" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <dialog id="modal" class="modal">
+    <form method="dialog" class="modal-dismiss"><button class="icon-button" aria-label="Cerrar">×</button></form>
+    <div id="modal-content"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

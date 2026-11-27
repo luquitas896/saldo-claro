@@ -1,0 +1,31 @@
+{
+  "name": "saldo-claro",
+  "version": "1.0.0",
+  "description": "Gestor personal de ingresos, gastos, presupuestos y metas de ahorro",
+  "main": "main.js",
+  "author": "Lucas Pereyra",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "ar.utn.saldoclaro",
+    "productName": "Saldo Claro",
+    "directories": { "output": "release" },
+    "files": ["index.html", "main.js", "styles.css", "app.js", "README.md", "package.json"],
+    "win": { "target": "nsis" },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Saldo Claro"
+    }
+  },
+  "devDependencies": {
+    "electron": "45.0.0",
+    "electron-builder": "^26.18.0"
+  }
+}
